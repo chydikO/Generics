@@ -2,7 +2,6 @@ package com.itstep.task2;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class GenericTask2 <T>  {
@@ -27,15 +26,10 @@ public class GenericTask2 <T>  {
     }
 
     public int getElementSize() {
-        return elements.length;
-    }
-
-    public int getFreeElementSize() {
-        return elementSize - getElementSize();
+        return elementSize;
     }
 
     public void setElementSize(int newElementSize) {
-        //TODO: resize array
         if (getElementSize() >= newElementSize ) {
             System.out.println("Invalid new elementSize");
             return;
@@ -69,12 +63,11 @@ public class GenericTask2 <T>  {
         return max;
     }
 
-    public T getAverengeElement() {
+    public <T extends Comparable<T>> T getAverengeElement() {
         Object[] sorted = Stream.of(elements)
                 .filter(s -> s != null)
                 .sorted()
                 .toArray(Object[]::new);
-
         return (T) sorted[Math.round(sorted.length) / 2];
     }
 
