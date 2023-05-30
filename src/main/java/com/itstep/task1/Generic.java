@@ -1,9 +1,9 @@
 package com.itstep.task1;
 
-public class Generic <T1,T2,T3>{
-    T1 obj1;
-    T2 obj2;
-    T3 obj3;
+public class Generic <T1,T2,T3> {
+    private T1 obj1;
+    private T2 obj2;
+    private T3 obj3;
 
     public Generic(T1 obj1, T2 obj2, T3 obj3) {
         this.obj1 = obj1;

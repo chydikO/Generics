@@ -1,5 +1,6 @@
 import com.itstep.model.User;
 import com.itstep.task1.Generic;
+import com.itstep.task2.GenericTask2;
 
 public class Main {
     private static final String STRING_SEPARATOR = new String("-".repeat(5) + " " + "-".repeat(5));
@@ -24,8 +25,26 @@ public class Main {
         Generic<User, Integer, Boolean> generic3 = new Generic<>(user, 123, false);
         System.out.println(generic3);
         System.out.println("-".repeat(20));
-        System.out.println("Task - 2");
 
+        System.out.println("Task - 2");
+        Integer[] integers = {14, 12, -10, 115, 25};
+        GenericTask2 genericTask2_1 = new GenericTask2<>(integers);
+        genericTask2_1.setElementSize(15);
+        System.out.println(genericTask2_1.getElementSize());
+
+        System.out.println("Min element: " + genericTask2_1.getMinElement());
+        System.out.println("Max element: " + genericTask2_1.getMaxElement());
+        System.out.println("Avr element: " + genericTask2_1.getAverengeElement());
+        System.out.println(genericTask2_1);
+        System.out.println(STRING_SEPARATOR);
+
+        User[] users = {new User(), new User(), new User(), new User(), new User()};
+        GenericTask2 genericTask2_2 = new GenericTask2<>(users);
+        genericTask2_2.setElementSize(15);
+        System.out.println("Min element: " + genericTask2_2.getMinElement());
+        System.out.println("Max element: " + genericTask2_2.getMaxElement());
+        System.out.println("Avr element: " + genericTask2_2.getAverengeElement());
+        System.out.println(genericTask2_2);
 
         System.out.println("-".repeat(20));
         System.out.println("Task - 3");

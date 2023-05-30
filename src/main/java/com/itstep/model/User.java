@@ -1,11 +1,8 @@
 package com.itstep.model;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
-public class User {
+public class User implements Comparable<User> {
     private final String name;
     private final String id;
 
@@ -17,6 +14,17 @@ public class User {
     @Override
     public String toString() {
         return "User {name-> " + name +  " id-> " + id + "}";
+    }
+
+    @Override
+    public int compareTo(User o) {
+        if (name.compareTo(o.name) != 0) {
+            return name.compareTo(o.name);
+        } else if (id.compareTo(o.id) != 0) {
+            return id.compareTo(o.id);
+        } else {
+            return 0;
+        }
     }
 
     /**
