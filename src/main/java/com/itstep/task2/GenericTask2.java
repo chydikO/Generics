@@ -34,8 +34,7 @@ public class GenericTask2 <T>  {
             System.out.println("Invalid new elementSize");
             return;
         }
-        T[] temp = (T[]) Array.newInstance(elements.getClass().getComponentType(),
-                newElementSize);
+        T[] temp = (T[]) Array.newInstance(elements.getClass().getComponentType(), newElementSize);
         System.arraycopy(elements, 0, temp, 0, elementSize);
         elements = temp;
         elementSize = newElementSize;

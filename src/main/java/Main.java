@@ -1,3 +1,4 @@
+import com.itstep.model.Car;
 import com.itstep.model.User;
 import com.itstep.task1.Generic;
 import com.itstep.task2.GenericTask2;
@@ -48,5 +49,16 @@ public class Main {
 
         System.out.println("-".repeat(20));
         System.out.println("Task - 3");
+        Car[] cars = {new Car("BMW", 2020),
+                new Car("Ford", 2015),
+                new Car("Audi", 2021)
+        };
+        GenericTask2<Car> genericTask3 = new GenericTask2<>(cars);
+        try {
+            System.out.println("Min element: " + genericTask3.getMinElement());
+        } catch (ClassCastException exception) {
+            System.err.println("не працює, тому що клас GenericTask2 працює тільки з класом якій реалізує методи інтерфейса Comparable");
+        }
+
     }
 }
